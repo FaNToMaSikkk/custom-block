@@ -2,6 +2,9 @@
 
 **English** · [Русский](README.ru.md)
 
+> This project was built with the help of [Claude Code](https://claude.com/claude-code), Anthropic's AI coding assistant.
+> That covers the generator, the port of the BONE:MSD engine to Minecraft 26.3, the tests and this documentation.
+
 Describe your blocks as a list in `blocks.json`, like enum values. The generator
 builds everything else: the block item, loot tables, the creative-menu entry, models,
 translations, and the vanilla overrides. The output is a single pack
