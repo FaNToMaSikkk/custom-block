@@ -1,0 +1,9 @@
+{
+    "title": {
+    "font": "omg_font:custom",
+      "translate": "painting.example_pack.example_item"
+    },
+  "width": 16,
+  "height": 16,
+  "asset_id": "example_pack:items/example_item"
+  }

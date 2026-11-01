@@ -1,0 +1,36 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:barrier",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "minecraft:painting",
+                "minecraft:painting/variant": "example_pack:blocks/waterlogged_example",
+                "minecraft:item_name": {
+                  "translate": "block.example_pack.waterlogged_example",
+                  "fallback": "Block Name"
+                },
+                "minecraft:custom_data": {
+                  "bone_cb": {
+                    "pack": "example_pack",
+                    "block_name": "waterlogged_example",
+                    "use_place_function": false,
+                    "place_information": {
+                      "base_block": "oak_slab[type=double,waterlogged=true]"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

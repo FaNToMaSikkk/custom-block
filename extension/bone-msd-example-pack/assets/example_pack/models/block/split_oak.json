@@ -1,0 +1,9 @@
+{ "parent": "minecraft:block/cube", "textures": { 
+ "up": "example_pack:block/split_oak", 
+ "down": "example_pack:block/split_oak", 
+ "north": "example_pack:block/split_oak", 
+ "east": "example_pack:block/split_oak", 
+ "south": "example_pack:block/split_oak", 
+ "west": "example_pack:block/split_oak", 
+ "particle": "example_pack:block/split_oak"}} 
+ 

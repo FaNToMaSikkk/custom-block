@@ -1,0 +1,34 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:barrier",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_model": "minecraft:painting",
+                "minecraft:painting/variant": "example_pack:items/example_item",
+                "minecraft:item_name": {
+                  "translate": "item.example_pack.example_item",
+                  "fallback": "Item Name"
+                },
+                "minecraft:can_break": {
+                  "blocks": "#bone_msd:item_engine/noplace"
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:can_break"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

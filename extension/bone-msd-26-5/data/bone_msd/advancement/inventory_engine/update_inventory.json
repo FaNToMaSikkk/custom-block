@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "criteria": {
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "criteria"
+    ]
+  ],
+  "rewards": {
+    "function": "bone_msd:inventory_engine/trigger_update"
+  }
+}

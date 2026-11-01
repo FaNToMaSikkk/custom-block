@@ -1,0 +1,17 @@
+{
+  "values": [
+    "#minecraft:air", "#minecraft:replaceable", "#minecraft:leaves", "#minecraft:impermeable",
+    "#minecraft:slabs", "#minecraft:stairs", "#minecraft:fences", "#minecraft:fence_gates", "#minecraft:walls",
+    "#minecraft:trapdoors", "#minecraft:doors", "#minecraft:buttons", "#minecraft:pressure_plates",
+    "#minecraft:rails", "#minecraft:all_signs", "#minecraft:banners", "#minecraft:beds", "#minecraft:candles",
+    "#minecraft:flower_pots", "#minecraft:wool_carpets", "#minecraft:ice", "#minecraft:campfires",
+    "#minecraft:chains", "#minecraft:lanterns", "#minecraft:bars", "#minecraft:lightning_rods",
+    "minecraft:glass", "minecraft:tinted_glass", "minecraft:glowstone", "minecraft:sea_lantern",
+    "minecraft:slime_block", "minecraft:honey_block", "minecraft:lever", "minecraft:redstone_wire",
+    "minecraft:redstone_torch", "minecraft:redstone_wall_torch", "minecraft:repeater", "minecraft:comparator",
+    "minecraft:daylight_detector", "minecraft:tripwire", "minecraft:tripwire_hook", "minecraft:barrier",
+    "minecraft:spawner", "minecraft:hopper", "minecraft:lectern", "minecraft:chest", "minecraft:trapped_chest",
+    "minecraft:ender_chest", "minecraft:redstone_block", "minecraft:observer", "minecraft:piston",
+    "minecraft:sticky_piston", "minecraft:piston_head", "minecraft:moving_piston"
+  ]
+}

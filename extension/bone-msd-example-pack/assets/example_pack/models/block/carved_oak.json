@@ -1,0 +1,9 @@
+{ "parent": "minecraft:block/cube", "textures": { 
+ "up": "example_pack:block/carved_oak", 
+ "down": "example_pack:block/carved_oak", 
+ "north": "example_pack:block/carved_oak", 
+ "east": "example_pack:block/carved_oak", 
+ "south": "example_pack:block/carved_oak", 
+ "west": "example_pack:block/carved_oak", 
+ "particle": "example_pack:block/carved_oak"}} 
+ 

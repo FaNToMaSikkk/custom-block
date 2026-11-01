@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minecraft:block/oak_slab"
+    },
+    "type=double,waterlogged=false": {
+      "model": "example_pack:block/split_oak"
+    },
+    "type=top": {
+      "model": "minecraft:block/oak_slab_top"
+    },
+    "type=double,waterlogged=true": {
+      "model": "example_pack:block/carved_oak"
+    }
+  }
+}

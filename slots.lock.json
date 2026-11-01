@@ -1,0 +1,17 @@
+{
+  "slots": {
+    "split_oak": {
+      "slab": "pale_oak_slab",
+      "waterlogged": false
+    },
+    "carved_oak": {
+      "slab": "bamboo_mosaic_slab",
+      "waterlogged": false
+    },
+    "engraved_copper": {
+      "slab": "waxed_oxidized_cut_copper_slab",
+      "waterlogged": false
+    }
+  },
+  "retired": []
+}

@@ -1,0 +1,57 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:oak_slab",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:block_state_property",
+                "block": "minecraft:oak_slab",
+                "properties": {
+                  "type": "double"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "example_pack:blocks/example_block/give",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "minecraft:oak_slab",
+              "properties": {
+                "type": "double",
+                "waterlogged": "false"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "example_pack:blocks/waterlogged_example/give",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "minecraft:oak_slab",
+              "properties": {
+                "type": "double",
+                "waterlogged": "true"
+              }
+            }
+          ]
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "minecraft:blocks/oak_slab"
+}

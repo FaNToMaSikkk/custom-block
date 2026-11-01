@@ -1,0 +1,1 @@
+$setblock ~ ~ ~ $(base_block)

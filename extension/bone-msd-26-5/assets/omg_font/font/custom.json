@@ -1,0 +1,633 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/backgrounds/start.png",
+			"ascent": 33,
+			"height": 47,
+			"chars": [
+				"\uE600"
+			]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/backgrounds/w1.png",
+			"ascent": 33,
+			"height": 47,
+			"chars": [
+				"\uE601"
+			]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/backgrounds/w5.png",
+			"ascent": 33,
+			"height": 47,
+			"chars": [
+				"\uE602"
+			]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/backgrounds/w10.png",
+			"ascent": 33,
+			"height": 47,
+			"chars": [
+				"\uE603"
+			]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/backgrounds/w50.png",
+			"ascent": 33,
+			"height": 47,
+			"chars": [
+				"\uE604"
+			]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/backgrounds/end.png",
+			"ascent": 33,
+			"height": 47,
+			"chars": [
+				"\uE605"
+			]
+        },
+
+        {
+            "type": "space",
+            "advances": {
+                " ": 4,
+                "　": 0,
+                "\uE606": -1,
+                "\uE607": -5,
+                "\uE608": -10,
+                "\uE609": -50,
+
+                "\uE60A": -4,
+                "\uE60B": 1
+            }
+        },
+
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/a.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "A"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/b.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "B"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/c.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "C"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/d.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "D"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/e.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "E"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/f.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "F"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/g.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "G"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/h.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "H"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/i.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "I"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/j.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "J"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/k.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "K"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/l.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "L"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/m.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "M"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/n.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "N"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/o.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "O"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/p.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "P"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/q.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "Q"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/r.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "R"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/s.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "S"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/t.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "T"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/u.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "U"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/v.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "V"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/w.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "W"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/x.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "X"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/y.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "Y"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/z.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "Z"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/a_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "a"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/b_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "b"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/c_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "c"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/d_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "d"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/e_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "e"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/f_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "f"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/g_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "g"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/h_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "h"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/i_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "i"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/j_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "j"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/k_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "k"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/l_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "l"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/m_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "m"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/n_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "n"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/o_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "o"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/p_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "p"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/q_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "q"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/r_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "r"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/s_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "s"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/t_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "t"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/u_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "u"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/v_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "v"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/w_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "w"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/x_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "x"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/y_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "y"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/letters/z_small.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "z"
+            ]
+        },
+
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/one.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "1"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/two.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "2"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/three.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "3"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/four.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "4"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/five.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "5"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/six.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "6"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/seven.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "7"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/eight.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "8"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/nine.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "9"
+            ]
+        },
+        {
+            "type": "bitmap",
+            "file": "omg_font:font/numbers/zero.png",
+            "ascent": 29,
+            "height": 30,
+            "chars": [
+                "0"
+            ]
+        }
+    ]
+}

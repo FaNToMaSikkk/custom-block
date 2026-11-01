@@ -1,0 +1,15 @@
+fill ~-7 ~-7 ~-7 ~7 ~-7 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~-6 ~-7 ~7 ~-6 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~-5 ~-7 ~7 ~-5 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~-4 ~-7 ~7 ~-4 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~-3 ~-7 ~7 ~-3 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~-2 ~-7 ~7 ~-2 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~-1 ~-7 ~7 ~-1 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~ ~-7 ~7 ~ ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~1 ~-7 ~7 ~1 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~2 ~-7 ~7 ~2 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~3 ~-7 ~7 ~3 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~4 ~-7 ~7 ~4 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~5 ~-7 ~7 ~5 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~6 ~-7 ~7 ~6 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier
+fill ~-7 ~7 ~-7 ~7 ~7 ~7 minecraft:command_block{auto:1b,Command:"function bone_msd:block_engine/placing/parse_custom_json"} replace barrier

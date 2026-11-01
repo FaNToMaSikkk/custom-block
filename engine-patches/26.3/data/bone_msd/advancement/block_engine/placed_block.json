@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "criteria": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "minecraft:barrier"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "criteria"
+    ]
+  ],
+  "rewards": {
+    "function": "bone_msd:block_engine/placing/placed_barrier"
+  }
+}

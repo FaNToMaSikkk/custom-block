@@ -1,0 +1,29 @@
+{
+
+    "\uE600": "beginning; width 2",
+    "\uE601": "width 1",
+    "\uE602": "width 5",
+    "\uE603": "width 10",
+    "\uE604": "width 50",
+    "\uE605": "end; width 1",
+    "\uE606": "-1; place after each segment cus the auto letter-spacing",
+    "\uE607": "-5",
+    "\uE608": "-10",
+    "\uE609": "-50",
+    "\uE60A": "-4; place before the beginning",
+    "\uE60B": "1",
+    "　": "this has no width in-game; it's used to make this .json file easier to read and use.",
+
+    "painting.omg_font.example_one": "\uE60A　\uE600\uE606　\uE604\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE601\uE606　\uE605　\uE609\uE608\uE608\uE608\uE608\uE606　Example",
+    "painting.omg_font.example_two": "\uE60A　\uE600\uE606　\uE604\uE606　\uE604\uE606　\uE604\uE606　\uE604\uE606　\uE604\uE606　\uE604\uE606　\uE604\uE606　\uE603\uE606　\uE601\uE606　\uE601\uE606　\uE601\uE606　\uE601\uE606　\uE605　\uE609\uE609\uE609\uE609\uE609\uE609\uE609\uE608\uE606\uE606\uE606\uE606　ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890",
+
+
+
+    "painting.example_pack.example_block": "\uE60A　\uE600\uE606　\uE604\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE601\uE606　\uE605　\uE609\uE608\uE608\uE608\uE608\uE606　§fExample Block",
+    "painting.example_pack.waterlogged_example": "\uE60A　\uE600\uE606　\uE604\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE601\uE606　\uE605　\uE609\uE608\uE608\uE608\uE608\uE606　§fWaterlog Demo",
+    "painting.example_pack.example_item": "\uE60A　\uE600\uE606　\uE604\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE603\uE606　\uE601\uE606　\uE605　\uE609\uE608\uE608\uE608\uE608\uE606　§fExample Item",
+
+    "block.example_pack.example_block": "§fExample Block",
+    "block.example_pack.waterlogged_example": "§fWaterlog Demo",
+    "item.example_pack.example_item": "§fExample Item"
+}

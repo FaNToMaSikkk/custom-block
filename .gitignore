@@ -1,0 +1,9 @@
+# Build output — recreated by generator/build.py
+build/
+
+# Python
+__pycache__/
+*.pyc
+
+# GameTest log written on failure
+tests/last_gametest.log

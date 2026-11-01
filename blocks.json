@@ -1,0 +1,40 @@
+{
+  "namespace": "custom_blocks",
+  "description": "Custom Blocks + BONE:MSD (26.3)",
+  "minecraft_version": "26.3",
+  "use_waterlogged_slots": false,
+  "reserved_slabs": [],
+  "blocks": [
+    {
+      "id": "split_oak",
+      "name": {
+        "en_us": "Split Oak",
+        "ru_ru": "Колотый дуб"
+      },
+      "material": "wood",
+      "texture": "split_oak"
+    },
+    {
+      "id": "carved_oak",
+      "name": {
+        "en_us": "Carved Oak",
+        "ru_ru": "Резной дуб"
+      },
+      "material": "wood",
+      "model": "cube_column",
+      "textures": {
+        "side": "carved_oak",
+        "end": "minecraft:block/stripped_oak_log_top"
+      }
+    },
+    {
+      "id": "engraved_copper",
+      "name": {
+        "en_us": "Engraved Copper",
+        "ru_ru": "Гравированная медь"
+      },
+      "material": "copper",
+      "texture": "minecraft:block/chiseled_copper"
+    }
+  ]
+}

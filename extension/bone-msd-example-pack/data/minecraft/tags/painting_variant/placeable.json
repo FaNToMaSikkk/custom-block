@@ -1,0 +1,7 @@
+{
+  "values": [
+    "example_pack:blocks/example_block",
+    "example_pack:blocks/waterlogged_example",
+    "example_pack:items/example_item"
+  ]
+}
