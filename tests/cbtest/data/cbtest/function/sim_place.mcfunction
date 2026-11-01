@@ -8,6 +8,8 @@ data modify storage bone_msd:block_engine BlockData.entity_id set from storage b
 data modify storage bone_msd:block_engine BlockData.entity_data set from storage bone_msd:block_engine BlockData.place_information.block_entity.entity_data
 data modify storage bone_msd:block_engine BlockData.loot_table set from storage bone_msd:block_engine BlockData.place_information.block_entity.loot_table
 $setblock $(x) 65 0 barrier
-$execute positioned $(x) 65 0 run function bone_msd:block_engine/placing/fill_layer
+# как placed_barrier: луч «взгляда» на юг из соседней клетки находит поставленный барьер
+scoreboard players set place_dist Check 0
+$execute positioned $(x).5 65.5 -0.5 rotated 0 0 run function bone_msd:block_engine/placing/find_barrier
 $execute if block $(x) 65 0 command_block run say T2 OK $(id): barrier -> command_block
 # установку делает сам command_block на следующем тике

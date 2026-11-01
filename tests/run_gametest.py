@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PRISM = Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher"
 VERSION = "26.3"
-EXPECTED_OK = 9  # сколько строк «T<n> OK» печатает cbtest при успехе
+EXPECTED_OK = 10  # сколько строк «T<n> OK» печатает cbtest при успехе
 
 
 def classpath():

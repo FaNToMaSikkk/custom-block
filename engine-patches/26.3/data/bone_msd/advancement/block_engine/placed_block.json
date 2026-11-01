@@ -4,8 +4,21 @@
       "trigger": "minecraft:placed_block",
       "conditions": {
         "location": {
-          "type": "minecraft:match_block",
-          "blocks": "minecraft:barrier"
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:match_block",
+              "blocks": "minecraft:barrier"
+            },
+            {
+              "type": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:custom_data": "{bone_cb:{}}"
+                }
+              }
+            }
+          ]
         }
       }
     }

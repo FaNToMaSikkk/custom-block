@@ -93,6 +93,10 @@ real block.
 the world opens in safe mode with `Failed to parse bone_msd:block_engine/placed_block`. The
 generator copies the engine and applies `engine-patches/26.3/` on top:
 - the new `placed_block` advancement format;
+- placement fix: the original engine reacted to *any* placed barrier and turned every barrier within
+  7 blocks into a command block. Ordinary barriers became stray command blocks, and barriers near a
+  placed custom block became copies of it. Now the advancement fires only for items with `bone_cb`,
+  and only the barrier the player is looking at is converted;
 - the new `item modify` syntax in `update_slot`;
 - five redstone block tags that were missing from the author's archive.
 
@@ -151,7 +155,7 @@ GameTest server with the pack from `build/` plus the test pack `tests/cbtest`. I
 it checks:
 - that the pack loads without errors or warnings;
 - that the block item carries `bone_cb`;
-- barrier → command block → placed block;
+- barrier → command block → placed block, without touching a nearby ordinary barrier;
 - drops of custom blocks and of ordinary slabs;
 - painting → block item conversion.
 
