@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PRISM = Path.home() / ".var/app/org.prismlauncher.PrismLauncher/data/PrismLauncher"
 VERSION = "26.3"
-EXPECTED_OK = 10  # сколько строк «T<n> OK» печатает cbtest при успехе
+EXPECTED_OK = 16  # сколько строк «T<n> OK» печатает cbtest при успехе
 
 
 def classpath():
@@ -63,8 +63,8 @@ def main():
         print("  !!  ", line[:300])
     passed = "All 1 required tests passed" in log and len(oks) == EXPECTED_OK and not problems
     print(f"\n{'ПРОЙДЕНО' if passed else 'ПРОВАЛ'}: {len(oks)}/{EXPECTED_OK} проверок, проблем в логе: {len(problems)}")
+    (ROOT / "tests" / "last_gametest.log").write_text(log, encoding="utf-8")
     if not passed:
-        (ROOT / "tests" / "last_gametest.log").write_text(log, encoding="utf-8")
         print("Полный лог: tests/last_gametest.log")
         sys.exit(1)
 

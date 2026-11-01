@@ -2,6 +2,9 @@
 
 **English** · [Русский](README.ru.md)
 
+> **`experiments` branch.** Full blocks work as on `main`; slabs and stairs (`"shape"`) are an
+> experiment drawn by `item_display`. They pass the server test, but they have not been tried in the game yet.
+
 > This project was built with the help of [Claude Code](https://claude.com/claude-code), Anthropic's AI coding assistant.
 > That covers the generator, the port of the BONE:MSD engine to Minecraft 26.3, the tests and this documentation.
 
@@ -49,6 +52,7 @@ Requires Python 3.9+ (standard library only). Generator messages are in Russian.
 | `name` | no | A string (en_us) or `{ "en_us": "...", "ru_ru": "..." }`. Derived from `id` by default. |
 | `title` | no | Creative-menu caption. Only `A-Z a-z 0-9` and space, because the engine font has nothing else. Defaults to `name.en_us`. |
 | `material` | no | `wood` · `stone` (default) · `copper` · `wool` · `concrete`. Sets sound, hardness, required tool and flammability. |
+| `shape` | no | `full` (default) · `slab` · `stairs`. Slabs and stairs are drawn by `item_display` (see below); for them `model` can only be `cube_all`, `cube_column` or `cube_bottom_top`. |
 | `texture` | * | One texture on all sides (model `cube_all`). |
 | `model` + `textures` | * | `cube_column` (`side`, `end`) · `cube_bottom_top` (`side`, `top`, `bottom`) · `cube` (`up`, `down`, `north`, `south`, `east`, `west`, optional `particle`). |
 | `model_file` | no | Path to your own JSON model (e.g. from Blockbench), relative to `Custom-Block/`. Entries from `textures` are merged into it. The model must still be a full cube (see Limitations). |
@@ -77,8 +81,9 @@ BONE:MSD engine turns player-made double slabs into full blocks, so this state i
 world. The resource pack draws your model on it, and the data pack replaces its drop. The block
 has no entity: it is fast, can be pushed by pistons and does not desync.
 
-Available slots per material: wood 13, stone 45, copper 4, wool 16, concrete 16. With
-`use_waterlogged_slots` there are twice as many.
+Available slots per material: wood 12, stone 44, copper 3, wool 15, concrete 15. With
+`use_waterlogged_slots` there are twice as many. One slab per material is kept out of the pool:
+it is the base of custom slabs (see below).
 
 **Stable slots.** A slot is assigned once and stored in `slots.lock.json`, so the order of
 `blocks.json` does not matter. When a block is removed, its slot is *retired* and never given to
@@ -89,6 +94,30 @@ retired slots anyway: `python3 generator/build.py --free-retired`.
 being placed, puts a command block in its spot, and on the next tick that command block places the
 real block.
 
+**Slabs and stairs (`"shape"`).** A slab or stairs block cannot be a free block state: there
+are no free slab or stairs states of the right shape. So these blocks are a real vanilla base block
+with an `item_display` on top of it:
+
+| material | slab base | stairs base |
+|---|---|---|
+| wood | `oak_slab` | `oak_stairs` |
+| stone | `stone_slab` | `stone_stairs` |
+| copper | `waxed_cut_copper_slab` | `waxed_cut_copper_stairs` |
+| wool | `white_wool_slab` | `white_wool_stairs` |
+| concrete | `white_concrete_slab` | `white_concrete_stairs` |
+
+- The block item **is** the base item (e.g. `oak_slab`) with your model and `bone_cs` data. The game
+  places it as usual, so top/bottom, facing, stair corners and waterlogging all work. An advancement
+  catches the placement, a ray from the player's eyes finds the block, and an `item_display` with a
+  copy of the item is summoned in the block. The base gives the hitbox, sound and hardness.
+- The model is the vanilla `slab`/`stairs` model with your textures, 1% larger than the base so the
+  base texture does not show through. For stairs the display reads the block state every tick and
+  switches the model (straight/inner/outer) and rotation, so corners follow neighbours like vanilla.
+- Breaking: when the base disappears, the display looks for the base item that has just dropped,
+  takes one and drops your item instead. No drop (creative, `/setblock`), nothing extra.
+- Two custom slabs can be stacked in one block (two displays). The engine does not turn such a double
+  slab into planks.
+
 **Engine port.** The original engine (`extension/bone-msd-26-5`) does **not load** in 26.3:
 the world opens in safe mode with `Failed to parse bone_msd:block_engine/placed_block`. The
 generator copies the engine and applies `engine-patches/26.3/` on top:
@@ -98,7 +127,9 @@ generator copies the engine and applies `engine-patches/26.3/` on top:
   placed custom block became copies of it. Now the advancement fires only for items with `bone_cb`,
   and only the barrier the player is looking at is converted;
 - the new `item modify` syntax in `update_slot`;
-- five redstone block tags that were missing from the author's archive.
+- five redstone block tags that were missing from the author's archive;
+- a check in the engine's ray (`raycast/trigger`): a double slab that holds Custom-Block slabs is not
+  turned into a full vanilla block.
 
 Only files the engine actually uses go into the pack: font textures the font does not
 reference and the author's demo strings stay out.
@@ -157,17 +188,26 @@ it checks:
 - that the block item carries `bone_cb`;
 - barrier → command block → placed block, without touching a nearby ordinary barrier;
 - drops of custom blocks and of ordinary slabs;
-- painting → block item conversion.
+- painting → block item conversion;
+- slabs and stairs: display placement, stairs following a shape change, a double slab made of two
+  custom slabs, its drop when broken (16 checks in total).
 
 The test targets the example blocks `split_oak` and `engraved_copper`. The resource pack
 cannot be checked this way; only the game client renders it.
 
 ## Limitations
 
-- **Full blocks only.** A block is a double slab, so its hitbox, collision and occlusion are
-  always a full cube. A non-cube `model_file` only changes the picture and leaves see-through gaps
-  in the world. Custom slabs and stairs need a different mechanism: the only unobtainable slab is
-  `petrified_oak_slab`, and there are no unobtainable stairs. They are not implemented yet.
+- **Full blocks** are double slabs, so their hitbox, collision and occlusion are always a full cube.
+  A non-cube `model_file` only changes the picture and leaves see-through gaps in the world.
+- **Slabs and stairs** (experimental):
+  - every block is an entity (two for a double slab) checked every tick, so thousands of them cost
+    more than full blocks;
+  - rotated stairs rotate their texture with the model (vanilla stairs keep it aligned, `uvlock`),
+    so directional textures look different from vanilla;
+  - break particles and cracks are those of the base block (e.g. oak);
+  - a piston moves only the base: the block turns into a plain base block;
+  - a double custom slab takes its light from the block above;
+  - middle-click picks the vanilla base block.
 - Textures must be opaque: slabs render as solid blocks.
 - Middle-click in creative picks the vanilla slab, not your block.
 - When a player builds a double slab of the same type, the custom block flashes for 1 tick

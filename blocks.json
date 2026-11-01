@@ -35,6 +35,26 @@
       },
       "material": "copper",
       "texture": "minecraft:block/chiseled_copper"
+    },
+    {
+      "id": "split_oak_slab",
+      "name": {
+        "en_us": "Split Oak Slab",
+        "ru_ru": "Колотая дубовая плита"
+      },
+      "material": "wood",
+      "shape": "slab",
+      "texture": "split_oak"
+    },
+    {
+      "id": "split_oak_stairs",
+      "name": {
+        "en_us": "Split Oak Stairs",
+        "ru_ru": "Колотые дубовые ступеньки"
+      },
+      "material": "wood",
+      "shape": "stairs",
+      "texture": "split_oak"
     }
   ]
 }

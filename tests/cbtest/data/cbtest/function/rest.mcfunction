@@ -19,4 +19,5 @@ execute as @e[tag=cbt,limit=1] run function bone_msd:inventory_engine/update_slo
 execute as @e[tag=cbt,limit=1] if items entity @s weapon.mainhand minecraft:barrier[minecraft:painting/variant="custom_blocks:blocks/carved_oak"] run say T6 OK painting converted
 data get entity @e[tag=cbt,limit=1] equipment.mainhand
 # 7. реестр картин и тег placeable
-say TEST END
+# 8-13. плиты и ступеньки через item_display
+schedule function cbtest:shaped1 1t

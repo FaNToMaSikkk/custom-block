@@ -1,4 +1,5 @@
 say TEST START
+scoreboard objectives add cbtest dummy
 forceload add -16 -16 15 15
 # Тики блоков (а значит и командные блоки движка) работают только в тикающих чанках.
 # Без игрока forceload-чанк начинает тикать не сразу, поэтому проверки запускает
