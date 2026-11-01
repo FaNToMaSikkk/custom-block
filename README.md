@@ -2,22 +2,19 @@
 
 **English** · [Русский](README.ru.md)
 
-> **`experiments` branch.** Full blocks work as on `main`; slabs and stairs (`"shape"`) are an
-> experiment drawn by `item_display`. They pass the server test, but they have not been tried in the game yet.
-
 > This project was built with the help of [Claude Code](https://claude.com/claude-code), Anthropic's AI coding assistant.
 > That covers the generator, the port of the BONE:MSD engine to Minecraft 26.3, the tests and this documentation.
 
-Describe your blocks as a list in `blocks.json`, like enum values. The generator
-builds everything else: the block item, loot tables, the creative-menu entry, models,
-translations, and the vanilla overrides. The output is a single pack
+Describe your blocks as a list in `blocks.json`, like enum values: full blocks, slabs and
+stairs. The generator builds everything else: the block item, loot tables, the creative-menu
+entry, models, translations, and the vanilla overrides. The output is a single pack
 for **Minecraft 26.3** that already includes the BONE:MSD engine.
 
 ```
 Custom-Block/
 ├── blocks.json          ← your block "enum" (edit this)
 ├── textures/            ← 16×16 PNG textures (put them here)
-├── slots.lock.json      ← which slab each block occupies (auto-generated, do NOT delete)
+├── slots.lock.json      ← which slab each full block occupies (auto-generated, do NOT delete)
 ├── generator/build.py   ← the generator
 ├── engine-patches/26.3/ ← fixes that port the BONE:MSD engine to Minecraft 26.3
 ├── tests/               ← build check on a real 26.3 server, no client needed
@@ -31,6 +28,11 @@ Custom-Block/
 2. Add an entry to `blocks.json`:
    ```json
    { "id": "marble", "name": { "en_us": "Marble", "ru_ru": "Мрамор" }, "material": "stone", "texture": "marble" }
+   ```
+   A slab or stairs of the same texture is one more line each, with `shape`:
+   ```json
+   { "id": "marble_slab",   "name": "Marble Slab",   "material": "stone", "shape": "slab",   "texture": "marble" },
+   { "id": "marble_stairs", "name": "Marble Stairs", "material": "stone", "shape": "stairs", "texture": "marble" }
    ```
 3. Build and install into a world:
    ```bash
@@ -55,12 +57,14 @@ Requires Python 3.9+ (standard library only). Generator messages are in Russian.
 | `shape` | no | `full` (default) · `slab` · `stairs`. Slabs and stairs are drawn by `item_display` (see below); for them `model` can only be `cube_all`, `cube_column` or `cube_bottom_top`. |
 | `texture` | * | One texture on all sides (model `cube_all`). |
 | `model` + `textures` | * | `cube_column` (`side`, `end`) · `cube_bottom_top` (`side`, `top`, `bottom`) · `cube` (`up`, `down`, `north`, `south`, `east`, `west`, optional `particle`). |
-| `model_file` | no | Path to your own JSON model (e.g. from Blockbench), relative to `Custom-Block/`. Entries from `textures` are merged into it. The model must still be a full cube (see Limitations). |
+| `model_file` | no | Full blocks only. Path to your own JSON model (e.g. from Blockbench), relative to `Custom-Block/`. Entries from `textures` are merged into it. The model must still be a full cube (see Limitations). |
 | `drop` | no | Another loot table to drop instead, e.g. `minecraft:blocks/oak_planks`. By default the block drops itself. |
 | `creative` | no | `false` hides the block from the creative menu. |
-| `slab` / `waterlogged` | no | Pin the block to a specific slab, e.g. `"slab": "oak_slab"`. Rarely needed. |
+| `slab` / `waterlogged` | no | Full blocks only. Pin the block to a specific slab, e.g. `"slab": "cherry_slab"`. Rarely needed. |
 
-\* either `texture` or `textures` is required.
+\* either `texture` or `textures` is required. For slabs and stairs, `texture` goes on every face;
+with `cube_column` the `end` texture goes on top and bottom; with `cube_bottom_top` the `top`, `bottom`
+and `side` textures go where their names say.
 
 A texture value without `:` is the file `textures/<name>.png`. You can put a `.png.mcmeta`
 next to it for animation. A value with `:` is an existing texture, e.g. `minecraft:block/calcite`.
@@ -94,7 +98,7 @@ retired slots anyway: `python3 generator/build.py --free-retired`.
 being placed, puts a command block in its spot, and on the next tick that command block places the
 real block.
 
-**Slabs and stairs (`"shape"`).** A slab or stairs block cannot be a free block state: there
+**Slabs and stairs (`"shape"`, new in 1.1.0).** A slab or stairs block cannot be a free block state: there
 are no free slab or stairs states of the right shape. So these blocks are a real vanilla base block
 with an `item_display` on top of it:
 
@@ -138,6 +142,15 @@ reference and the author's demo strings stay out.
 (121 and 97), but the pack has one `pack.mcmeta`. So it declares the range
 `min_format: 97`, `max_format: 121`. The game's own code reports the pack as compatible in both
 roles; this was checked.
+
+## Upgrading from 1.0.x
+
+Blocks you already placed keep working; their slots do not change. The difference: five slabs are now
+the base of custom slabs and are no longer given to full blocks: `oak_slab`, `stone_slab`,
+`waxed_cut_copper_slab`, `white_wool_slab`, `white_concrete_slab`. If your `slots.lock.json` gives
+one of them to a full block, the build stops with an error that names the block. Pin that block to
+another slab with `"slab"`; blocks of it already placed will then look like a plain double slab.
+With the default order this can only happen once a material has almost no free slots left.
 
 ## Installation
 
@@ -192,14 +205,15 @@ it checks:
 - slabs and stairs: display placement, stairs following a shape change, a double slab made of two
   custom slabs, its drop when broken (16 checks in total).
 
-The test targets the example blocks `split_oak` and `engraved_copper`. The resource pack
+The test targets the example blocks `split_oak`, `engraved_copper`, `split_oak_slab` and `split_oak_stairs`. The resource pack
 cannot be checked this way; only the game client renders it.
 
 ## Limitations
 
 - **Full blocks** are double slabs, so their hitbox, collision and occlusion are always a full cube.
   A non-cube `model_file` only changes the picture and leaves see-through gaps in the world.
-- **Slabs and stairs** (experimental):
+- **Slabs and stairs** (new in 1.1.0; the logic passes the server test, but how they look has not
+  been checked in the game client yet):
   - every block is an entity (two for a double slab) checked every tick, so thousands of them cost
     more than full blocks;
   - rotated stairs rotate their texture with the model (vanilla stairs keep it aligned, `uvlock`),
