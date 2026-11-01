@@ -53,8 +53,9 @@ def main():
             cwd=tmp, capture_output=True, text=True, timeout=300)
     log = result.stdout + result.stderr
 
+    benign = ("Unsafe", "Can't keep up!")  # предупреждения JVM и лаг сервера под нагрузкой
     problems = [line for line in log.splitlines()
-                if re.search(r"/(ERROR|WARN)\]", line) and "Unsafe" not in line]
+                if re.search(r"/(ERROR|WARN)\]", line) and not any(b in line for b in benign)]
     oks = [line.split("] ", 2)[-1] for line in log.splitlines() if re.search(r"\] T\d+ OK", line)]
     for line in oks:
         print("  ok  ", line)

@@ -147,7 +147,7 @@ Lines **after** the title are drawn later, i.e. on top of the fake tooltip:
 python3 tests/run_gametest.py
 ```
 The script takes Java and the 26.3 jar from Prism Launcher and starts Minecraft's built-in
-GameTest server with the pack from `build/` plus the test pack `tests/cbtest`. In about 10 seconds
+GameTest server with the pack from `build/` plus the test pack `tests/cbtest`. In about 15 seconds
 it checks:
 - that the pack loads without errors or warnings;
 - that the block item carries `bone_cb`;
