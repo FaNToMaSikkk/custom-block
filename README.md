@@ -96,8 +96,8 @@ generator copies the engine and applies `engine-patches/26.3/` on top:
 - the new `item modify` syntax in `update_slot`;
 - five redstone block tags that were missing from the author's archive.
 
-Only files the engine actually uses go into the pack. The author's drafts (`*-old`),
-unused font textures and demo strings stay out.
+Only files the engine actually uses go into the pack: font textures the font does not
+reference and the author's demo strings stay out.
 
 **One pack, both roles.** Data packs and resource packs have different format numbers in 26.3
 (121 and 97), but the pack has one `pack.mcmeta`. So it declares the range
@@ -177,6 +177,7 @@ cannot be checked this way; only the game client renders it.
 ## Credits
 
 BONE:MSD ("Bhex's Over-Named Extension for Mod-Sized Datapacks") is by Bhex. The original
-engine, its example pack and documentation are in `extension/`, unmodified; the textures in
-`textures/` come from that example pack. They are third-party work and are not covered by
+engine, its example pack and documentation are in `extension/`. The only changes there: the
+author's drafts (`*-old` functions) and unused font textures were removed, and the pack icon and
+description were replaced. The textures in `textures/` come from that example pack. They are third-party work and are not covered by
 this project; all rights belong to their author. They will be removed on the author's request.
